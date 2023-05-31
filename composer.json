@@ -1,0 +1,14 @@
+{
+    "name": "vendor/currencies",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Currencies\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Kalinin"
+        }
+    ],
+    "require": {}
+}
