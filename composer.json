@@ -1,14 +1,11 @@
 {
-    "name": "vendor/currencies",
-    "autoload": {
-        "psr-4": {
-            "Vendor\\Currencies\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Alexander Kalinin"
-        }
-    ],
-    "require": {}
+  "name": "vendor/currencies",
+  "authors": [
+    {
+      "name": "Alexander Kalinin"
+    }
+  ],
+  "require": {
+    "rakit/validation": "^1.4"
+  }
 }
