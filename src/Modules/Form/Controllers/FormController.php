@@ -45,6 +45,7 @@ class FormController extends BaseController
 
 	public function signup()
 	{
+		$this->session->set('loggedin', false);
 		try {
 			$this->model->add(['login' => $this->login, 'password' => $this->password]);
 		} catch (ExcValidation $e) {

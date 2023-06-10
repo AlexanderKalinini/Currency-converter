@@ -7,13 +7,16 @@ include_once 'vendor/autoload.php';
 use System\ModulesDispatcher;
 use System\Router;
 use Modules\Form\FormRouts;
+use Modules\Account\AccountRouts;
+
+
+
 
 const BASE_URL = '/oop/parser/';
 
-
-
 $modulesDispatcher = new ModulesDispatcher();
 $modulesDispatcher->add(new FormRouts());
+$modulesDispatcher->add(new AccountRouts());
 $router = new Router(BASE_URL);
 $modulesDispatcher->registerRoutes($router);
 

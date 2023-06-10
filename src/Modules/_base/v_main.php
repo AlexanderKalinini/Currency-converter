@@ -11,13 +11,13 @@
 
 <body>
   <?php if (empty($_SESSION["loggedin"])) { ?>
-    <div class="absolute bg-black w-full h-full opacity-50"></div> <?php } ?>
+  <div class="absolute bg-black w-full h-full opacity-50"></div> <?php } ?>
   <header class="py-3">
     <nav>
       <ul class="flex justify-around ">
-        <li><a href="#">Account</a> </li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign up</a> </li>
+        <li><a href="convert">Account</a> </li>
+        <li><a href="login">Login</a></li>
+        <li><a href="signup">Sign up</a> </li>
       </ul>
     </nav>
   </header>

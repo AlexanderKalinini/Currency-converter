@@ -1,12 +1,15 @@
 <?php
 
 namespace System\Database;
+
 use Exception;
 
-class SelectBuilder{
+class SelectBuilder
+{
 	public string $table;
 	protected array $fields = ['*'];
 	protected array $addons = [
+		'fields' => null,
 		'join' => null,
 		'where' => null,
 		'group_by' => null,
@@ -15,25 +18,29 @@ class SelectBuilder{
 		'limit' => null
 	];
 
-	public function __construct(string $table){
+	public function __construct(string $table)
+	{
 		$this->table = $table;
 	}
 
-	public function fields(array $fields){
+	public function fields(array $fields)
+	{
 		$this->fields = $fields;
 		return $this;
 	}
 
-	public function addWhere(string $where){
+	public function addWhere(string $where)
+	{
 		$this->addons['where'] .= ' ' . $where;
 		return $this;
 	}
 
-	public function __toString(){
+	public function __toString()
+	{
 		$activeCommands = [];
-		
-		foreach($this->addons as $command => $setting){
-			if($setting !== null){
+
+		foreach ($this->addons as $command => $setting) {
+			if ($setting !== null) {
 				$sqlKey = str_replace('_', ' ', strtoupper($command));
 				$activeCommands[] = "$sqlKey $setting";
 			}
@@ -44,8 +51,11 @@ class SelectBuilder{
 		return trim("SELECT $fields FROM {$this->table} $addon");
 	}
 
-	public function __call($name, $args){
-		if(!array_key_exists($name, $this->addons)){
+	public function __call($name, $args)
+	{
+
+		if (!array_key_exists($name, $this->addons)) {
+			var_dump("Errrrrror", $name, $args);
 			throw new Exception('sql error unknown');
 		}
 

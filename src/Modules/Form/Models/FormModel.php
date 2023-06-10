@@ -13,8 +13,5 @@ class FormModel extends Model
 		'login' => 'required|min:6|max:20',
 		'password' => 'required|min:6'
 	];
-	protected array $validationMessages = [
-		'required' => 'Fields are required',
-		'min:6' => 'min:6'
-	];
+	protected array $validationMessages = [];
 }
