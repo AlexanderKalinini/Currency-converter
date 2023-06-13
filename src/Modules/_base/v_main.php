@@ -11,10 +11,10 @@
 
 </head>
 
-<body class="m-auto w-9/12">
+<body>
   <?php if (empty($_SESSION["loggedin"])) { ?>
     <div class="absolute bg-black w-full h-full opacity-50 "></div> <?php } ?>
-  <header class="py-5 mb-10">
+  <header class="py-5 mb-10 m-auto w-9/12">
     <nav>
       <ul class="flex justify-around ">
         <li><a href="convert">Account</a> </li>
