@@ -9,7 +9,23 @@ class AccountModel extends Model
 	protected static $instance;
 	protected string $table = 'currencies';
 
+	public function add(array $fields): int
+	{
+		$names = [];
+		$masks = [];
 
+		foreach ($fields as $field => $val) {
+			$names[] = $field;
+			$masks[] = ":$field";
+		}
+
+		$namesStr = implode(', ', $names);
+		$masksStr = implode(', ', $masks);
+
+		$query = "INSERT INTO {$this->table} ($namesStr) VALUES ($masksStr)";
+		$this->db->query($query, $fields);
+		return $this->db->lastInsertId();
+	}
 
 	public function deleteAll(): void
 	{

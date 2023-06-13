@@ -1,0 +1,12 @@
+.converter {
+  display: flex;
+  flex-direction: column;
+}
+
+.converter_title_name {
+  color: #ffae14;
+}
+
+h1 {
+  color: #000;
+}

@@ -53,12 +53,12 @@ abstract class Model
    public function add(array $fields): int
    {
 
-//       $validation = $this->validator->validate($fields, $this->validationRules, $this->validationMessages);
-//       $messages = json_encode($validation->errors()->toArray());
-// 
-//       if ($validation->fails()) {
-//          throw new ExcValidation($messages, $validation->errors());
-//       }
+      $validation = $this->validator->validate($fields, $this->validationRules, $this->validationMessages);
+      $messages = json_encode($validation->errors()->toArray());
+
+      if ($validation->fails()) {
+         throw new ExcValidation($messages, $validation->errors());
+      }
 
       $names = [];
       $masks = [];
